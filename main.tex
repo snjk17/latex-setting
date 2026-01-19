@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt,oneside,openany]{jsbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb,latexsym,bm}
+% \usepackage{txfonts}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+
+
+
+\newtheorem{thm}{定理}[chapter]
+\newtheorem{deff}{定義}[chapter]
+\newtheorem{sub}{補題}[chapter]
+\newtheorem{rem}{注意}[chapter]
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+
+
+\makeindex
+%%% 余白・文字数調整(左37mm, 右18mm, 上下共30mm, 文字数約40字/行, 行数約32行)
+\setlength{\textwidth}{150truemm}      % テキスト幅: 210-(30+30)=150mm
+%\setlength{\fullwidth}{\textwidth}     % ページ全体の幅
+\setlength{\oddsidemargin}{30truemm}   % 左余白
+\addtolength{\oddsidemargin}{-1truein} % 左位置デフォルトから-1inch
+\setlength{\topmargin}{30truemm}       % 上余白
+\setlength{\textheight}{210truemm}     % テキスト高さ: 297-(30+30)=237mm
+\addtolength{\topmargin}{-1truein}     % 上位置デフォルトから-1inch
+\makeatother
+%
+%% <local definitions/>
+
+
+% 本文の行数と桁数を指定出来るように
+\def\linesparpage#1{\baselineskip=\textheight
+   \divide\baselineskip by #1}
+\def\kcharparline#1{%
+   \ifx\xkanjiskip\undefined%
+   % NTT jTeX用
+   \jintercharskip 0mm plus 0.2mm minus 0.2mm
+   \else
+   % ASCII pTex用
+   \xkanjiskip 0mm plus 0.2mm minus 0.2mm
+   \fi
+   \settowidth{\textwidth}{あ}%
+   \multiply\textwidth by #1}
+%
+%
+{\large
+\begin{document}
+\kcharparline{40} % 一行を40字に
+%%% タイトル設定
+
+\begin{titlepage}
+\begin{center}
+	{\Large 卒業論文\\}
+	\vspace{ 5mm }
+	\baselineskip 35pt plus 1pt minus 1pt
+	{\bf {\huge タイトル}}
+	
+	\vspace{ 30mm }
+	{\LARGE なまえ \\}
+	
+	\vspace{ 10mm }
+	{\large 大阪大学工学部 応用自然科学科\\}
+	{\large 応用物理学科目\\}
+	
+	\vspace{ 10mm }
+	{\large 指導教員\\}
+	{\large 先生のなまえ \\}
+	
+	\vspace{ 5mm }
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=20mm]{osaka_logo.pdf}\\
+	\end{figure}
+	\vspace{ 5mm }
+	{\large 令和　年　月　日}
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+% %
+% \include{chap1}
+\chapter{序論（3ページ）}
+\section{背景}
+\section{目的}
+\section{構成}
+\index{aaa}
+参考文献\cite{10.11499/sicejl.55.356}
+
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
+本研究は，著者が大阪大学工学部応用自然科学科応用物理学科目在学中に
+大阪大学大学院情報科学研究科情報数理学専攻計画数理学講座において行われたものである．
+末筆ながら，本研究を進めるにあたり，御多忙の中，細部にいたるまで御指導と御助言を賜りました
+本学准教授　和田孝之先生には深く感謝の意を表すと共に，
+厚く御礼を申し上げます．
+また，研究を行う上で，終始適切な御助言と御助力を賜りました本学教授　藤崎泰正先生，
+助教　庵智幸先生，事務補佐員　比護俊子氏には厚く御礼申し上げます．
+最後に，貴重な御意見を賜りました計画数理学講座内諸氏に御礼申し上げます．
+%
+
+
+\bibliography{ref} 
+\bibliographystyle{junsrt}
+
+
+%
+
+\end{document}
+}

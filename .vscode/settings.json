@@ -1,0 +1,100 @@
+{
+    // ---------- 言語設定 (Language Settings) ----------
+    "[tex]": {
+        // スニペット補完中にも通常の補完候補を表示する
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2スペースにする
+        "editor.tabSize": 2,
+        // 保存時に自動整列を行う
+        "editor.formatOnSave": true
+    },
+    "[latex]": {
+        // スニペット補完中にも通常の補完候補を表示する
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2スペースにする
+        "editor.tabSize": 2,
+        // 保存時に自動整列を行う
+        "editor.formatOnSave": true
+    },
+    "[bibtex]": {
+        // インデント幅を2スペースにする
+        "editor.tabSize": 2,
+        // 保存時に自動整列を行う
+        "editor.formatOnSave": true
+    },
+    // ---------- LaTeX Workshop 設定 ----------
+    // フォーマッタの設定 (Formatter Settings)
+    // latexindentを使用してコードを整形する
+    "latex-workshop.formatting.latex": "latexindent",
+    // Windows環境で日本語を含むファイルを整形するためにUTF-8を強制指定 (重要)
+    "latex-workshop.formatting.latexArgs": [
+        "-l",
+        "-s",
+        "-y=defaultSettings:fileContents:encoding:utf8",
+        "%DOC%"
+    ],
+    // 補完機能 (IntelliSense)
+    // 使用しているパッケージのコマンドや環境を自動的に補完候補に追加する
+    "latex-workshop.intellisense.package.enabled": true,
+    // 自動クリーニング (Auto Clean)
+    // ビルド成功時に補助ファイルを自動削除する ("onBuilt")
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    // 自動ビルドをオフにする（手動でのみビルドを実行するように変更）
+    "latex-workshop.latex.autoBuild.run": "never",
+    // 削除対象のファイル拡張子
+    // デフォルト値に加えて、中間ファイルやシンクテックスファイルを指定
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+    // 出力ディレクトリ (Output Directory)
+    // 生成ファイル（PDF, log等）をプロジェクトルート下の "out" ディレクトリに出力する
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    // ビルドレシピ (Build Recipes)
+    // Ctrl+Alt+B で実行されるビルド手順のリスト
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ],
+    // ビルドツール (Build Tools)
+    // レシピで使用される各コマンドの定義
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-silent", // ログ出力を抑制
+                "-outdir=%OUTDIR%", // 出力先を上記設定のディレクトリに指定
+                "%DOC%" // 対象のルートドキュメント
+            ]
+        }
+    ],
+    // PDFビューアの設定
+    // VS Code内の新しいタブでPDFを開く
+    "latex-workshop.view.pdf.viewer": "tab"
+}

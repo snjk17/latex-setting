@@ -1,0 +1,113 @@
+\documentclass[dvipdfmx, draft]{jsarticle}
+% draft: 図の枠のみ表示，コンパイルが速い
+\usepackage{IPS-abstract}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{txfonts}
+\usepackage{bm}
+\pagestyle{empty}
+
+%行間の縮小率
+\renewcommand{\baselinestretch}{0.88}
+
+\mastertrue
+% これをコメントアウトすると，卒論用になる
+% Abstract, etitle, eautherを表示させたいときはコメントアウトを外す
+
+\title{タイトル}
+\etitle{} %英語タイトル
+
+\author{計画数理学講座\hspace{2zw}氏名}
+\eauthor{} %英語著者名
+
+\abstract{100 words. 概要書く
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen. 
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen. 
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen. 
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen. 
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen. 
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen. 
+This is a pen. This is a pen. This is a pen. This is a pen. This is a pen.}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{はじめに}
+この論文の流れなどをかく。
+
+\section{大項目タイトル}
+\subsection{小項目タイトル}
+内容を書きます。詳しくかいてね。\par
+これで一マス空き改行。\\
+これで空けずに改行。
+なにも書かなかったら改行しないよ。
+
+一行開けると一マス空き改行になるよ。
+
+式の書き方。
+\begin{equation}
+    x + y + z = w
+\end{equation}
+*をつけると式番号なし
+\begin{equation*}
+    x + y + z = w
+\end{equation*}
+好きな番号にもできるよ。
+\begin{equation*}
+    x + y + z = w \tag{7}
+\end{equation*}
+
+
+\subsection{アルゴリズム3}
+
+従来研究\cite{FujOT08,KitF05,FujDT03,FujDI98}を引用しながら、
+研究の背景から本研究の目的、概要をまとめます。
+
+\section{○○問題の定式化○○}
+\subsection{準備}
+有向グラフ$G=(V,E)$の$V$をn個の頂点の集合、$E$を有向辺の集合と考える。2つの頂点$u,v\subseteq V$間の距離を$d(u,v)$とする。($d(u,u)=0$)。
+\subsubsection{定性的クラスとパターンクラス}
+
+問題は数式できっちりと定式化しましょう。
+
+\section{○○主結果○○}
+
+主結果は定理としてまとめると、
+すっきりします。
+
+\section{○○数値例○○}
+
+簡単な数値例があると、わかりやすいですね。
+
+\section{おわりに}
+
+まとめを書きましょう。
+
+\begin{thebibliography}{9}
+    \bibitem{FujOT08}
+    Y.~Fujisaki, Y.~Oishi, and R.~Tempo:
+    Mixed Deterministic/Randomized Methods for Fixed Order Controller Design,
+    \textit{IEEE Transactions on Automatic Control},
+    \textbf{53}-9, 2033/2047 (2008)
+
+    \bibitem{KitF05}
+    北村亘, 藤崎泰正:
+    有界外乱のもとでの不確かなシステムのミニマックス推定,
+    計測自動制御学会論文集,
+    \textbf{41}-2, 111/117 (2005)
+
+    \bibitem{FujDT03}
+    Y.~Fujisaki, F.~Dabbene, and R.~Tempo:
+    Probabilistic Design of LPV Control Systems,
+    \textit{Automatica},
+    \textbf{39}-8, 1323/1337 (2003)
+
+    \bibitem{FujDI98}
+    藤崎, 段, 池田:
+    入出力データ配列に基づくシステム表現と制御方式,
+    システム制御情報学会論文誌,
+    \textbf{11}-11, 630/637 (1998)
+\end{thebibliography}
+
+\end{document}

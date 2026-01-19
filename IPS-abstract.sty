@@ -1,0 +1,92 @@
+% Yasumasa Fujisaki (2012/02/02)
+% 
+\typeout{Document Style Option `IPS-abstract.sty' <2012/02/02>}
+
+\twocolumn
+\sloppy
+\flushbottom
+\parindent 0.7em
+\leftmargini 2em
+\leftmarginv .5em
+\leftmarginvi .5em
+\oddsidemargin -6.4mm
+\evensidemargin -6.4mm
+\marginparwidth 48pt 
+\marginparsep 10pt 
+\textwidth 172mm
+\textheight 244mm
+\topmargin -14mm
+\columnsep 7mm
+\parindent 1zw
+
+\def\topfraction{0.99}
+\def\bottomfraction{0.99}
+\def\textfraction{0.01}
+\def\floatpagefraction{0.99}
+\def\dbltopfraction{0.99}
+\def\dblfloatpagefraction{0.99}
+\floatsep .5\floatsep
+\textfloatsep .5\textfloatsep
+\intextsep .5\intextsep
+\dblfloatsep .5\dblfloatsep
+\dbltextfloatsep .5\dbltextfloatsep
+%\abovecaptionskip 0pt
+
+\def\title#1{\gdef\@title{#1}}
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\eauthor#1{\gdef\@eauthor{#1}}
+
+\newif\ifmaster\masterfalse
+
+\def\@maketitle{
+  \par
+  \vskip 1.5em
+  \begin{center}%
+    {\Large\bf \@title}%
+    \ifmaster
+    \vskip 0.8em
+    {\Large\bf \@etitle}%
+    \fi
+    \vskip 1em
+    {\bf \@author}%
+    \ifmaster
+    \vskip 0.3em
+    {\bf \@eauthor}%
+    \fi
+  \end{center}
+  \ifmaster
+  \@ifundefined{@abstract}{}{%
+    \begin{center}%
+      \begin{minipage}{.9\textwidth}%
+        \normalsize\baselineskip 1.2em
+        {\bf Abstract \hskip 2ex}\@abstract
+      \end{minipage}%
+    \end{center}%
+    \gdef\@abstract{}}
+    \fi
+    \vskip 1em}
+\long\def\abstract#1{\long\gdef\@abstract{#1}}
+
+\def\section{\@startsection {section}{1}{\z@}%
+  {.8ex plus .5ex minus .2ex}{.5ex plus .2ex}{\large\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+  {.8ex plus .5ex minus .2ex}{.5ex plus .2ex}{\normalsize\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {.8ex plus .5ex minus .2ex}{.5ex plus .2ex}{\normalsize\bf}}
+\def\paragraph{\@startsection {paragraph}{4}{\z@}%
+  {0.5ex plus .3ex minus .2ex}{-1em}{\normalsize\bf}}
+\def\subparagraph{\@startsection {subparagraph}{4}{\parindent}%
+  {0.5ex plus .3ex minus .2ex}{-1em}{\normalsize\bf}}
+
+\def\thebibliography#1{\section*{参考文献\markboth
+ {参 考 文 献}{参 考 文 献}}\small\list
+    {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+    \advance\leftmargin\labelsep \itemsep 0pt plus .5pt
+    \usecounter{enumi}}
+    \def\newblock{\hskip .11em plus .33em minus .07em}
+    \sloppy\clubpenalty4000\widowpenalty4000
+    \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+
