@@ -1,4 +1,4 @@
-# LaTeX 執筆用テンプレート (卒業論文・レジュメ対応)
+# LaTeX 執筆用テンプレート
 
 このリポジトリは、LaTeXを初めて使う人でもスムーズに卒業論文やレジュメ（研究概要）の執筆を開始できるように構成されたテンプレートです。
 
@@ -8,7 +8,6 @@
 
 ### Step 1: TeX Live のインストール
 LaTeXの本体です。容量が大きいため（数GB）、安定したネット環境で実行してください。
-- [TeX Live インストールガイド](https://texwiki.texjp.org/?TeX%20Live/Windows) を参照してインストールします。
 - 詳細なセットアップ手順については、こちらの記事も参考にしてください：[Windows 11 に TeX Live をインストールして VS Code で執筆環境を作る](https://zenn.dev/hash_yuki/articles/31855fbdb5fdf7)
 
 ### Step 2: VS Code と拡張機能の導入
@@ -104,12 +103,4 @@ git pull origin main
   \caption{全体の大きなタイトル}
   \label{fig:total}
 \end{figure}
-```
-
-### 数式の書き方
-インライン数式は `$E=mc^2$`、独立した数式は `equation` 環境を使います。
-```latex
-\begin{equation}
-    x + y = z
-\end{equation}
 ```
